@@ -35,7 +35,18 @@ z-index: 100;
 }
 
 .logo {
-  height: 150px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 }
 
 nav ul {
@@ -468,5 +479,6 @@ footer {
 @media (max-width: 575.98px){
   
 }
+
 
 
