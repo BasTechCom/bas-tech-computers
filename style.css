@@ -20,19 +20,18 @@ body {
 /* Header & Nav */
 header {
  background-color: var(--secondary);
-            color: white;
-            padding: 15px 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+color: white;
+padding: 15px 0;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 100;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
 }
 
 .logo {
@@ -469,4 +468,5 @@ footer {
 @media (max-width: 575.98px){
   
 }
+
 
