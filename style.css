@@ -262,50 +262,6 @@ body {
   color: #333;
 }
 
-/* About */
-.about {
-  padding: 80px 0;
-}
-
-.bg-light {
-  background: #f4f7fa;
-}
-
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.about-text p {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-}
-
-.features {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.features li {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.about-image img {
-  width: 600px;
-  max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
 /* Contact */
 .contact {
   padding: 80px 0;
@@ -594,6 +550,7 @@ footer {
   margin-bottom: 15px;
 
 }
+
 
 
 
