@@ -13,16 +13,27 @@
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header>
-    <div class="container nav-container">
-      <img src="banner.png" alt="Bas-Tech Logo" class="logo" />
-      <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">⬆ Top</button>
-      
-      <!-- Hamburger Button for Mobile -->
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i> <!-- Menu icon -->
-      </button>
+ <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <div class="logo">Bastech</div>
+                <span class="logo-text">Computers</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="pages/login">Login</a></li>
+                <li><a href="pages/register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
   
       <!-- Navigation Menu -->
       <nav class="nav-menu">
@@ -214,4 +225,5 @@
 </body>
 
 </html>
+
 
