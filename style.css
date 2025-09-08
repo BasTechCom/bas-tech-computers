@@ -100,53 +100,90 @@ body {
             font-size: 1.5rem;
         }
 
-/* Hero Section */
-        .hero {
-            padding: 100px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3') center/cover;
-            color: white;
-            text-align: center;
-        }
+/* Hero Section with Background Slideshow */
+.hero {
+  position: relative;
+  height: 100vh; /* full screen */
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 100px 0;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease;
-        }
+/* Slideshow background */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* 3 images side by side */
+  height: 100%;
+  background: url('pic1.jpg') center/cover no-repeat,
+              url('pic2.jpg') center/cover no-repeat,
+              url('pic3.jpg') center/cover no-repeat;
+  background-size: cover;
+  animation: slideShow 15s infinite linear;
+  z-index: -1;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            animation: fadeIn 1.5s ease;
-        }
+/* Slide animation */
+@keyframes slideShow {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
 
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+/* Hero content (text + buttons) */
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
 
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
 
-        .btn-accent {
-            background: var(--accent);
-        }
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  animation: fadeIn 1.5s ease;
+}
 
-        .btn-accent:hover {
-            background: #c0392b;
-        }
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: var(--accent);
+}
+
+.btn-accent:hover {
+  background: #c0392b;
+}
+
 
         /* Sections */
         section {
@@ -558,6 +595,7 @@ footer {
   margin-bottom: 15px;
 
 }
+
 
 
 
