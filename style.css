@@ -476,7 +476,7 @@ footer {
   width: 100%;
   max-width: 300px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
@@ -648,6 +648,7 @@ p {
   color: #666;
   font-size: 0.95rem;
 }
+
 
 
 
