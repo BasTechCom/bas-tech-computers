@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - Bas-Tech Computer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      padding: 50px 20px;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .btn-login {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-login:hover {
+      background: #005bbf;
+    }
+    .logo {
+      height: 60px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      <img src="bastechlog.png" alt="Bas-Tech Logo" class="logo" />
+      <h2>Admin Login</h2>
+      <form class="login-form" onsubmit="checkLogin(event)">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+      <p style="margin-top: 20px; color: #666;">
+    </div>
+  </div>
+
+  <script>
+    function checkLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Simple check (you can change these credentials)
+      if (username === 'admin' && password === 'bastechnet123') {
+        alert('Login successful! Redirecting...');
+        window.location.href = 'admdash.html'; // Go to admin page
+      } else {
+        alert('Invalid username or password!');
+      }
+    }
+  </script>
+
+</body>
+</html>
