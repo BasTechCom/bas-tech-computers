@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* LOCK SCREEN */
+#lockScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: white;
+    color: #ff4b6e;
+}
+
+/* MAIN PAGE */
+#mainPage {
+    display: none;
+    padding: 20px;
+}
+
+.secret {
+    display: none;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* HEARTS */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 4s linear forwards;
+}
+
+@keyframes float {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-600px); opacity: 0; }
+}
+
+/* PHOTOS */
+.gallery {
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 5px;
+    border: 2px solid white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+    <h2>🔒 Secret Birthday Gift</h2>
+    <p>Only special person can open this ❤️</p>
+
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
+
+    <p id="error"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainPage" onclick="showSecret()">
+
+<h1>🎂 Happy Birthday My heartbeat ❤️</h1>
+
+<p>
+Today is a special day because someone amazing was born.
+</p>
+
+<p>
+I wish you happiness, love, and success always ❤️
+</p>
+
+<button onclick="event.stopPropagation(); playMusic()">
+🎵 Play Music
+</button>
+
+<!-- SECRET MESSAGE -->
+<div class="secret" id="secret">
+<h3>❤️ Secret Message</h3>
+<p>
+You unlocked my heart ❤️<br><br>
+No matter how many birthdays come, I will always wish you happiness.  
+Thank you for being special in my life.<br><br>I love you Forever and Ever I am waiting for you reply<br>
+— Umar ❤️
+</p>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery">
+<h3>📸 My Beautiful Rufaiderh</h3>
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+</div>
+
+</div>
+
+<!-- MUSIC -->
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let correctPassword = "Rufaida&umar";
+let opened = false;
+
+function checkPassword(){
+    let input = document.getElementById("password").value;
+
+    if(input === correctPassword){
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("mainPage").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "❌ Wrong password, try again";
+    }
+}
+
+window.onload = function(){
+    document.getElementById("mainPage").style.display = "none";
+
+    // Try autoplay music
+    let music = document.getElementById("music");
+    music.play().catch(()=>{});
+};
+
+function showSecret(){
+    if(!opened){
+        document.getElementById("secret").style.display = "block";
+
+        for(let i=0;i<30;i++){
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random()*100 + "vw";
+            document.body.appendChild(heart);
+
+            setTimeout(()=>heart.remove(), 4000);
+        }
+
+        opened = true;
+    }
+}
+
+function playMusic(){
+    document.getElementById("music").play();
+}
+
+</script>
+
+</body>
+</html>
