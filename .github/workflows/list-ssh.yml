@@ -1,0 +1,14 @@
+name: List SSH Directory
+
+on: 
+  workflow_dispatch: # Allows you to run this manually from the website
+
+jobs:
+  check-ssh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create dummy SSH folder
+        run: mkdir -p ~/.ssh && touch ~/.ssh/id_rsa
+
+      - name: Run your command
+        run: ls -al ~/.ssh
